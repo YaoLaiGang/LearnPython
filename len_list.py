@@ -18,8 +18,19 @@ print(list2*2)
 print(list1+list2)
 
 #list 中的变量可以改变，Python中只有List和directory内的元素可变
+a=[1,2,3,4,5,6]
+a[0]=0
+a[2:5]=[13,14,15]
+print(a)
+a[2:5]=[]
+print(a)
 
 
-
-
+'''
+小结：
+1.list写在[]之间，元素用,隔开
+2.list可以被索引和切片
+3.list使用+拼接
+4.list元素可变
+'''
  
