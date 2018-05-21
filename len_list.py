@@ -18,3 +18,8 @@ print(list2*2)
 print(list1+list2)
 
 #list 中的变量可以改变，Python中只有List和directory内的元素可变
+
+
+
+
+ 
