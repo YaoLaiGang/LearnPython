@@ -66,6 +66,9 @@ import sys ; x='laigang' ; sys.stdout.write(x+'\n')
 #print默认换行，不换行需要特殊处理
 print("姚来刚",end=" ")
 
+#Python格式化输出字符串，和C语言的方式相同
+print('我叫%s今年%d岁'%('小明',3))
+
 '''
 在 python 用 import 或者 from...import 来导入相应的模块。
 将整个模块(somemodule)导入，格式为： import somemodule
