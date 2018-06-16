@@ -49,8 +49,10 @@ print(myList)
 关键字参数：在使用的时候指定‘参数名 = value ' 这样可以变更参数顺序
 默认参数：这个语法在c++中也存在，在参数中指定默认值，比如age = 20,当用户不指定改参数的时候，采用默认值
 不定长参数:固定格式 func（arg1,*vartuple）顾名思义，当参数加了*，它就会接受多个参数，并打包成元组
+另外一个函数亦可以作为参数，这一点需要注意
 '''
-#关键字参数,默认参数
+#关键字参数,默认参数，
+#默认参数必须放到最后，否则会报错
 def printme(str1,age = 30):
     print(str1)
 printme(age=50,str1='30')
@@ -63,6 +65,12 @@ def printinfo(arg1,*vartuple):
     for var in vartuple:
         print(var,end = '^^^')
 printinfo('测试',2,3,54,4,6,3,5,7)
+
+#不定长参数可以使用** ，这样的参数以dict保存，可修改,但是要声明其名字
+def printinfo_2(arg,**vardict):
+    print(vardict)
+
+printinfo_2(1,a=2,b=3,c=4,d=5,e=6)
 
 #注意 *后的参数必须使用关键字参数指定,否则会报错，*可以单独出现
 def f(a,b,*,c):
@@ -81,6 +89,8 @@ sum = lambda arg1,arg2 : arg1+arg2
 
 print(sum(20,30))
 
+#需要注意的是lambda函数也可以使用关键字参数和默认参数
+
 '''
 return 
 这个就老生常谈了，从函数诞生之日return就是一个逃不掉的话题，Python也不例外
@@ -98,11 +108,13 @@ E （Enclosing）闭包函数外的函数中
 G （Global） 全局作用域
 B （Built-in） 内建作用域
 Python 以   L -> E -> G -> B 的顺序查找
+需要注意的是，虽然局部作用域可以访问全局变量，但是无法修改它的值，如果想更改
+那么 才是用global和unlocal
 '''
 
 #作用域演示
 
-x = int(2.9)  # 内建作用域
+x = int(2.9)  # 内建作用域,int()是系统内建的函数
  
 g_count = 0  # 全局作用域
 def outer():
