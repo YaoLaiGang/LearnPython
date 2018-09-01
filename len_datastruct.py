@@ -31,7 +31,7 @@ stack.append(6) #压栈
 stack.append(7)
 print(stack)
 
-print(stack.pop())
+print(stack.pop())#出栈
 
 '''
 使用deque来模拟队列
@@ -88,7 +88,7 @@ matrix = [
 #将3*4矩阵转化为4*3矩阵（矩阵转置）
 print([[ matrix[0][i] , matrix[1][i] , matrix[2][i]] for i in range(4) ])
 
-print([[row[i] for row in matrix] for i in range(4)])
+print([[row[i] for row in matrix] for i in range(4)])#外侧有一个值，内侧再循环一遍
 
 #使用循环来解决这个问题
 transposed = []
@@ -130,3 +130,32 @@ print(u)
 #推导式生成set集合
 a = {x for x in 'afefadfefjaofnwe' if x not in 'abc'}
 
+#字典的遍历技巧，在遍历字典时，可以使用items方法同时获得键值
+knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+for k,v in knights.items():
+    print(k,v)
+
+#list中遍历时，可以使用enumerate()获得其下标
+for i,v in enumerate(['baidu','ali','tencent']):
+    print(i,v)
+
+#遍历多个序列，使用zip()函数,该函数是一一对应的，不是笛卡尔积
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+for q,a in zip(questions,answers):
+    print("what is your %s It is %s"%(q,a))
+
+#反向遍历序列，使用reversed()函数，或者使用倒着的步进
+
+#reversed()函数
+for q in reversed(questions):
+    print(q)
+
+#逆向步进
+for i in range(len(questions)-1,-1,-1):
+    print(questions[i])
+
+#有序遍历序列 ， sorted()函数
+basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+for fruit in sorted(basket):
+    print(fruit)
