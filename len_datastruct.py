@@ -74,3 +74,59 @@ print([x*y for x in vec1 for y in vec2])
 
 #对应项相乘
 print([vec1[i]*vec2[i] for i in range(len(vec1))])
+
+#如果前面的能搞明白，那么下面这个也应该绰绰有余
+print([str(round(355/113,i)) for i in range(1,6)])
+
+#矩阵的模拟,使用嵌套LIST
+matrix = [
+    [1,2,3,4],
+    [5,6,7,8],
+    [9,10,11,12]
+]
+
+#将3*4矩阵转化为4*3矩阵（矩阵转置）
+print([[ matrix[0][i] , matrix[1][i] , matrix[2][i]] for i in range(4) ])
+
+print([[row[i] for row in matrix] for i in range(4)])
+
+#使用循环来解决这个问题
+transposed = []
+for i in range(4):  #第几列
+    row = []
+    for j in range(3):  #第几行
+        row.append(matrix[j][i])
+    transposed.append(row)
+print(transposed)
+
+#解法二
+transposed.clear
+for i in range(4):
+    transposed.append([row[i] for row in matrix])
+print(transposed)
+
+'''
+del 对LIST的切割
+del的删除和LIST的删除不一样，del的删除可以使用访问列表时的步进删除
+'''
+a = [1,2,3,4,5,6,7,8]
+del a[0]
+a
+del a[2:4]
+a
+del a[:]
+a
+
+'''
+元组的基本使用
+'''
+t = 123,345,456 #声明可以不带括号,如果元组是更大的一部分就需要
+print(t)
+
+#嵌套
+u = t , (1,2,3,4,5)
+print(u)
+
+#推导式生成set集合
+a = {x for x in 'afefadfefjaofnwe' if x not in 'abc'}
+
