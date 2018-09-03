@@ -4,3 +4,4 @@ import collections
 
 __all__ = ["module_var"]
 
+#dir(模块名) 可以获取该模块内定义的所有名称 ， 如果不给出参数，就打印当前定义的所有名称
