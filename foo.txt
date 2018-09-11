@@ -1,0 +1,2 @@
+('linux is not unix', 15)用Python！ 
+ 对的，Python是程序员的享受
